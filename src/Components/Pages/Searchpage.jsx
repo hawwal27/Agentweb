@@ -162,9 +162,9 @@ import React from 'react'
 const Searchpage = () => {
   return (
     <div>
-      <h1>hellowlord</h1>
+      <h1>Hello world</h1>
     </div>
   )
 }
 
-export default Searchpa1<h1>halleoword</h1>
+export default Searchpage
