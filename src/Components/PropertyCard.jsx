@@ -1,14 +1,14 @@
 import { MapPin, Bed, Bath, Square, Heart } from "lucide-react";
 import { Button } from "./ui/button";
 
-
 const PropertyCardAlt = () => {
   const sampleProperty = {
     id: "sample-1",
     title: "Modern 3 Bedroom Apartment",
     location: "Lagos, Nigeria",
     price: "₦1,200,000",
-    image: "https://www.samslist.us/wp-content/uploads/2020/11/cool-house-pool-arq-pinterest_63660.jpg", // Make sure this exists in /public/images
+    image:
+      "https://www.samslist.us/wp-content/uploads/2020/11/cool-house-pool-arq-pinterest_63660.jpg",
     bedrooms: 3,
     bathrooms: 2,
     area: "120 sqm",
@@ -26,17 +26,25 @@ const PropertyCardAlt = () => {
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        {/* Type Badge */}
+        {/* Type Tag */}
         <div className="absolute top-4 left-4 z-10">
-          {/* <Badge variant={sampleProperty.featured ? "default" : "secondary"} className="capitalize font-semibold">
+          <span
+            className={`px-3 py-1 text-xs font-semibold rounded-full ${
+              sampleProperty.featured
+                ? "bg-primary text-white"
+                : "bg-muted text-foreground"
+            }`}
+          >
             {sampleProperty.type}
-          </Badge> */}
+          </span>
         </div>
 
-        {/* Featured Tag */}
+        {/* Featured Tag (optional) */}
         {sampleProperty.featured && (
           <div className="absolute top-4 left-28 z-10">
-            <Badge className="bg-accent text-accent-foreground">Featured</Badge>
+            <span className="px-3 py-1 text-xs font-semibold rounded-full bg-yellow-400 text-black">
+              Featured
+            </span>
           </div>
         )}
 
@@ -75,7 +83,9 @@ const PropertyCardAlt = () => {
 
         <div className="flex items-center justify-between mt-auto">
           <div>
-            <span className="text-2xl font-bold text-primary">{sampleProperty.price}</span>
+            <span className="text-2xl font-bold text-primary">
+              {sampleProperty.price}
+            </span>
             <span className="text-sm text-muted-foreground">/month</span>
           </div>
           <Button size="sm" className="bg-primary hover:bg-primary-dark">

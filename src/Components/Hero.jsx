@@ -1,4 +1,4 @@
-"use client";
+
 
 import { useEffect, useState } from "react";
 import { Search, MapPin, Home as HomeIcon } from "lucide-react";
