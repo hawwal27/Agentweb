@@ -1,6 +1,6 @@
 import { MapPin, Bed, Bath, Square, Heart } from "lucide-react";
 import { Button } from "./ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "../Components/ui/badge";
 
 const PropertyCardAlt = () => {
   const sampleProperty = {

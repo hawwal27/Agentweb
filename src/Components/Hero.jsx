@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Search, MapPin, Home as HomeIcon } from "lucide-react";
 import { Button } from "./ui/button";
-import { Input } from "@/components/ui/input";
+import { Input } from "../Components/ui/input";
 import { Link } from "react-router-dom";
 import {
   Select,
