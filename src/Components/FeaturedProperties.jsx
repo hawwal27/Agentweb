@@ -1,6 +1,5 @@
 import PropertyCard from "./PropertyCard";
 import { properties } from "./Data/Properties";
-import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 
 const FeaturedProperties = () => {
@@ -28,14 +27,12 @@ const FeaturedProperties = () => {
 
         {/* Button */}
         <div className="text-center">
-          <Button
-            size="lg"
-            variant="outline"
-            className="group border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300"
+          <button
+            className="inline-flex items-center px-6 py-3 border border-primary text-primary font-semibold rounded-md hover:bg-primary hover:text-white transition-colors duration-300 group"
           >
             View All Properties
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-          </Button>
+          </button>
         </div>
       </div>
     </section>

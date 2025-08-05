@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Home, Phone, Menu, X } from "lucide-react";
-import { Button } from "./ui/button";
 import { Link } from "react-scroll";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
@@ -10,9 +9,8 @@ const Navbar = () => {
   const navLinks = [
     { to: "home", label: "Home" },
     { to: "properties", label: "About" },
-    { to: "about", label: "properties" },
+    { to: "about", label: "Properties" },
     { to: "contact", label: "Contact" },
-
   ];
 
   return (
@@ -43,14 +41,18 @@ const Navbar = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
-            <Button variant="outline" size="sm" className="hidden sm:inline-flex">
+            {/* Contact Agent */}
+            <button className="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium border border-primary text-primary rounded-md hover:bg-primary hover:text-white transition-colors">
               <Phone className="h-4 w-4 mr-2" />
               Contact Agent
-            </Button>
+            </button>
 
+            {/* Auth Buttons */}
             <SignedOut>
               <SignInButton mode="modal">
-                <Button variant="default" size="sm">Sign In</Button>
+                <button className="px-4 py-2 text-sm font-medium bg-primary text-white rounded-md hover:bg-primary-dark transition">
+                  Sign In
+                </button>
               </SignInButton>
             </SignedOut>
 
@@ -95,7 +97,7 @@ const Navbar = () => {
                 onClick={() => setMenuOpen(false)}
               >
                 <button className="mt-4 bg-blue-500 text-white px-5 py-2 rounded-full shadow hover:bg-amber-600 transition">
-                  Browes Homes
+                  Browse Homes
                 </button>
               </Link>
             </li>

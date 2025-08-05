@@ -1,5 +1,4 @@
 import { MapPin, Bed, Bath, Square, Heart } from "lucide-react";
-import { Button } from "./ui/button";
 
 const PropertyCardAlt = () => {
   const sampleProperty = {
@@ -39,7 +38,7 @@ const PropertyCardAlt = () => {
           </span>
         </div>
 
-        {/* Featured Tag (optional) */}
+        {/* Featured Tag */}
         {sampleProperty.featured && (
           <div className="absolute top-4 left-28 z-10">
             <span className="px-3 py-1 text-xs font-semibold rounded-full bg-yellow-400 text-black">
@@ -88,9 +87,9 @@ const PropertyCardAlt = () => {
             </span>
             <span className="text-sm text-muted-foreground">/month</span>
           </div>
-          <Button size="sm" className="bg-primary hover:bg-primary-dark">
+          <button className="px-4 py-2 text-sm font-medium bg-primary text-white rounded-md hover:bg-primary-dark transition">
             View Details
-          </Button>
+          </button>
         </div>
       </div>
     </div>
