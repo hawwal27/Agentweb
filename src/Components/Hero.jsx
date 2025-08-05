@@ -1,17 +1,8 @@
-
-
+import React from "react";
 import { useEffect, useState } from "react";
 import { Search, MapPin, Home as HomeIcon } from "lucide-react";
-import { Button } from "./ui/button";
 import { Input } from "../Components/ui/input";
 import { Link } from "react-router-dom";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 const backgroundImages = [
   "https://cdn.houseplansservices.com/content/e8f9m1vq6pnjhtd5h1u0tj16cc/w575.jpg?v=9",
@@ -28,8 +19,7 @@ const Hero = () => {
       setCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % backgroundImages.length
       );
-    }, 4000); // 4 seconds
-
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -42,10 +32,8 @@ const Hero = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40 z-0 transition-opacity duration-1000" />
 
-      {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 z-10">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -62,6 +50,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           <div className="bg-card rounded-2xl p-6 shadow-2xl backdrop-blur-sm bg-white/10">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              {/* Location Input */}
               <div className="relative">
                 <MapPin className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
                 <Input
@@ -70,40 +59,32 @@ const Hero = () => {
                 />
               </div>
 
-              <Select>
-                <SelectTrigger className="h-12">
-                  <SelectValue placeholder="Property Type" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="apartment">Apartment</SelectItem>
-                  <SelectItem value="house">House</SelectItem>
-                  <SelectItem value="duplex">Duplex</SelectItem>
-                  <SelectItem value="office">Office Space</SelectItem>
-                  <SelectItem value="land">Land</SelectItem>
-                </SelectContent>
-              </Select>
+              {/* Property Type Dropdown */}
+              <select className="h-12 px-4 rounded-md bg-white text-gray-600 focus:outline-none">
+                <option value="">Property Type</option>
+                <option value="apartment">Apartment</option>
+                <option value="house">House</option>
+                <option value="duplex">Duplex</option>
+                <option value="office">Office Space</option>
+                <option value="land">Land</option>
+              </select>
 
-              <Select>
-                <SelectTrigger className="h-12">
-                  <SelectValue placeholder="Price Range" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="0-500k">₦0 - ₦500k</SelectItem>
-                  <SelectItem value="500k-1m">₦500k - ₦1M</SelectItem>
-                  <SelectItem value="1m-2m">₦1M - ₦2M</SelectItem>
-                  <SelectItem value="2m-5m">₦2M - ₦5M</SelectItem>
-                  <SelectItem value="5m+">₦5M+</SelectItem>
-                </SelectContent>
-              </Select>
+              {/* Price Range Dropdown */}
+              <select className="h-12 px-4 rounded-md bg-white text-gray-600 focus:outline-none">
+                <option value="">Price Range</option>
+                <option value="0-500k">₦0 - ₦500k</option>
+                <option value="500k-1m">₦500k - ₦1M</option>
+                <option value="1m-2m">₦1M - ₦2M</option>
+                <option value="2m-5m">₦2M - ₦5M</option>
+                <option value="5m+">₦5M+</option>
+              </select>
 
-              <Link to='/search'>
-                <Button
-                  size="lg"
-                  className="h-12 bg-primary hover:bg-primary-dark"
-                >
+              {/* Search Button */}
+              <Link to="/search">
+                <button className="h-12 w-full flex items-center justify-center bg-primary text-white rounded-md hover:bg-primary-dark transition-colors">
                   <Search className="h-5 w-5 mr-2" />
                   Search
-                </Button>
+                </button>
               </Link>
             </div>
           </div>

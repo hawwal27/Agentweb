@@ -1,3 +1,4 @@
+import React from "react";
 import PropertyCard from "./PropertyCard";
 import { properties } from "./Data/Properties";
 import { ArrowRight } from "lucide-react";

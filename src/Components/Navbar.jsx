@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { Home, Phone, Menu, X } from "lucide-react";
 import { Link } from "react-scroll";

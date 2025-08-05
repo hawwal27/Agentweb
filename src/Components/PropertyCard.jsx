@@ -1,4 +1,5 @@
-import { MapPin, Bed, Bath, Square, Heart } from "lucide-react";
+import React from "react";
+import { MapPin, Bed, Bath, Square, Heart, Import } from "lucide-react";
 
 const PropertyCardAlt = () => {
   const sampleProperty = {
