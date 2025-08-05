@@ -1,6 +1,6 @@
 import { MapPin, Bed, Bath, Square, Heart } from "lucide-react";
 import { Button } from "./ui/button";
-import { Badge } from "../Components/ui/badge";
+
 
 const PropertyCardAlt = () => {
   const sampleProperty = {
@@ -28,9 +28,9 @@ const PropertyCardAlt = () => {
 
         {/* Type Badge */}
         <div className="absolute top-4 left-4 z-10">
-          <Badge variant={sampleProperty.featured ? "default" : "secondary"} className="capitalize font-semibold">
+          {/* <Badge variant={sampleProperty.featured ? "default" : "secondary"} className="capitalize font-semibold">
             {sampleProperty.type}
-          </Badge>
+          </Badge> */}
         </div>
 
         {/* Featured Tag */}
