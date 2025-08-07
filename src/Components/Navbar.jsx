@@ -8,18 +8,15 @@ import {
   SignInButton,
   UserButton,
 } from "@clerk/clerk-react";
-// If you're using React Router:
-// import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { to: "home", label: "Home" },
-    { to:"Dashboard", label: "Dashboard"},
-    { to: "properties", label: "About" },
-    { to: "about", label: "Properties" },
-    { to: "contact", label: "Contact" },
+    { to: "home", label: "Home", type: "scroll" },
+    { to: "properties", label: "About", type: "scroll" },
+    { to: "about", label: "Properties", type: "scroll" },
+    { to: "contact", label: "Contact", type: "scroll" },
   ];
 
   return (
@@ -33,7 +30,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex space-x-4 items-center">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -47,15 +44,14 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* Dashboard link - only visible when signed in */}
+            {/* Dashboard link (desktop) */}
             <SignedIn>
-              {/* Using regular <a>. If using React Router, switch to <RouterLink to="/dashboard"> */}
-              <a
-                href="/dashboard"
+              <RouterLink
+                to="/dashboard"
                 className="text-muted-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 Dashboard
-              </a>
+              </RouterLink>
             </SignedIn>
           </div>
 
@@ -105,26 +101,27 @@ const Navbar = () => {
                   duration={500}
                   offset={-70}
                   onClick={() => setMenuOpen(false)}
-                  className="cursor-pointer hover:text-amber-500 transition"
+                  className="cursor-pointer hover:text-primary transition"
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
 
-            {/* Mobile Dashboard Link (signed in only) */}
+            {/* Dashboard link (mobile) */}
             <SignedIn>
               <li>
                 <RouterLink
-                  to="Dashboard"
+                  to="/dashboard"
                   onClick={() => setMenuOpen(false)}
-                  className="text-blue-600 hover:text-amber-600 transition"
+                  className="text-blue-600 hover:text-primary transition"
                 >
                   Dashboard
                 </RouterLink>
               </li>
             </SignedIn>
 
+            {/* CTA on mobile */}
             <li>
               <Link
                 to="projects"
@@ -133,7 +130,7 @@ const Navbar = () => {
                 offset={-70}
                 onClick={() => setMenuOpen(false)}
               >
-                <button className="mt-4 bg-blue-500 text-white px-5 py-2 rounded-full shadow hover:bg-amber-600 transition">
+                <button className="mt-4 bg-primary text-white px-5 py-2 rounded-full shadow hover:bg-primary-dark transition">
                   Browse Homes
                 </button>
               </Link>
