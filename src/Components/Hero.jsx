@@ -38,7 +38,7 @@ const Hero = () => {
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Find Your Next
-            <span className="block text-accent"> Lovable Home</span>
+            <span className="block text-accent"> clozagent</span>
           </h1>
           <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
             Discover amazing properties with trusted agents across Nigeria. Your

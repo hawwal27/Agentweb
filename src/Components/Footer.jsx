@@ -1,5 +1,13 @@
 import React from "react";
-import { Home, Phone, Mail, MapPin, Facebook, Twitter, Instagram } from "lucide-react";
+import {
+  Home,
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -10,10 +18,11 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center">
               <Home className="h-8 w-8 mr-2" />
-              <span className="text-2xl font-bold">Lovable Homes</span>
+              <span className="text-2xl font-bold">clozagent</span>
             </div>
             <p className="text-white/80">
-              Your trusted partner in finding the perfect home. We connect you with verified properties and reliable agents across Nigeria.
+              Your trusted partner in finding the perfect home. We connect you
+              with verified properties and reliable agents across Nigeria.
             </p>
             <div className="flex space-x-4">
               <Facebook className="h-5 w-5 hover:text-yellow-400 cursor-pointer transition-colors" />
@@ -26,11 +35,31 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-white/80">
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Home</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Properties</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Contact</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Blog</a></li>
+              <li>
+                <a href="#" className="hover:text-yellow-400 transition-colors">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400 transition-colors">
+                  Properties
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400 transition-colors">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400 transition-colors">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400 transition-colors">
+                  Blog
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -38,11 +67,31 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Property Types</h3>
             <ul className="space-y-2 text-white/80">
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Apartments</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Houses</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Duplexes</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Office Spaces</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition-colors">Land</a></li>
+              <li>
+                <a href="#" className="hover:text-yellow-400 transition-colors">
+                  Apartments
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400 transition-colors">
+                  Houses
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400 transition-colors">
+                  Duplexes
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400 transition-colors">
+                  Office Spaces
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-yellow-400 transition-colors">
+                  Land
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -68,7 +117,7 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/80">
-          <p>&copy; 2024 Lovable Homes. All rights reserved.</p>
+          <p>&copy; 2024 clozagent. All rights reserved.</p>
         </div>
       </div>
     </footer>

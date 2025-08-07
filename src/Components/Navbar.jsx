@@ -1,8 +1,15 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import { Home, Phone, Menu, X } from "lucide-react";
 import { Link } from "react-scroll";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
+// If you're using React Router:
+// import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +28,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Home className="h-8 w-8 text-primary mr-2" />
-            <span className="text-2xl font-bold text-primary">Lovable Homes</span>
+            <span className="text-2xl font-bold text-primary">clozagent</span>
           </div>
 
           {/* Desktop Nav */}
@@ -38,11 +45,22 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
+
+            {/* Dashboard link - only visible when signed in */}
+            <SignedIn>
+              {/* Using regular <a>. If using React Router, switch to <RouterLink to="/dashboard"> */}
+              <a
+                href="/dashboard"
+                className="text-muted-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                Dashboard
+              </a>
+            </SignedIn>
           </div>
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
-            {/* Contact Agent */}
+            {/* Contact Agent Button */}
             <button className="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium border border-primary text-primary rounded-md hover:bg-primary hover:text-white transition-colors">
               <Phone className="h-4 w-4 mr-2" />
               Contact Agent
@@ -63,7 +81,10 @@ const Navbar = () => {
 
             {/* Mobile Menu Toggle */}
             <div className="md:hidden">
-              <button onClick={() => setMenuOpen(!menuOpen)} className="text-gray-700">
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="text-gray-700"
+              >
                 {menuOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
             </div>
@@ -89,6 +110,20 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
+
+            {/* Mobile Dashboard Link (signed in only) */}
+            <SignedIn>
+              <li>
+                <RouterLink
+                  to="Dashboard"
+                  onClick={() => setMenuOpen(false)}
+                  className="text-blue-600 hover:text-amber-600 transition"
+                >
+                  Dashboard
+                </RouterLink>
+              </li>
+            </SignedIn>
+
             <li>
               <Link
                 to="projects"
